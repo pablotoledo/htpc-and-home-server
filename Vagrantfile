@@ -11,7 +11,7 @@
 # - 1 bridged network interface with fixed IP address 192.168.0.80
 
 # This Vagrantfile is going to run the following scripts present in this repository:
-# - script-install-docker.sh
+# - script-install-sw.sh
 
 
 Vagrant.configure("2") do |config|
@@ -33,8 +33,8 @@ Vagrant.configure("2") do |config|
         v.network :private_network, :ip => "192.168.0.80"
     end
 
-    # Running the script-install-docker.sh script
-    config.vm.provision "shell", path: "script-install-docker.sh"
+    # Running the script-install-sw.sh script
+    config.vm.provision "shell", path: "src/script-install-sw.sh"
 
     # Copy directory to the VM at home directory
     config.vm.synced_folder ".", "/home/vagrant", type: "rsync"#, rsync__exclude: ".git/"
