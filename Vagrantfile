@@ -33,12 +33,22 @@ Vagrant.configure("2") do |config|
         v.network :private_network, :ip => "192.168.0.80"
     end
 
-    # Running the script-install-sw.sh script
-    config.vm.provision "shell", path: "src/script-install-sw.sh"
-
     # Copy directory to the VM at home directory
     config.vm.synced_folder ".", "/home/vagrant", type: "rsync"#, rsync__exclude: ".git/"
 
+    # Running the script-install-sw.sh script
+    config.vm.provision "shell", path: "src/script-install-sw.sh"
 
+    # Running install-environment-vars.sh as vagrant user
+    config.vm.provision "shell", inline: <<-SHELL
+        sudo -u vagrant /home/vagrant/src/install-environment-vars.sh
+    SHELL
+    
+    # Running commands to let vagrant user to use docker without sudo
+    config.vm.provision "shell", inline: <<-SHELL
+        sudo usermod -aG docker vagrant
+        sudo chown vagrant /var/run/docker.sock
+    SHELL
+    
 
 end
