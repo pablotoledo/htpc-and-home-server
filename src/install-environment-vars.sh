@@ -2,32 +2,35 @@
 
 #This script will define the environment variables in a Ubuntu 22.04 LTS server
 
+# Define base path
+BASE_PATH="$HOME"
+
 #Define the variables
 # Jellyfin -> config, tvshows, movies, terror_series, terror_movies, family_movies
-JELLYFIN_CONFIG="$HOME/jellyfin/config"
-JELLYFIN_TVSHOWS="$HOME/jellyfin/data/tvshows"
-JELLYFIN_MOVIES="$HOME/jellyfin/data/movies"
-JELLYFIN_TERROR_SERIES="$HOME/jellyfin/data/terror_series"
-JELLYFIN_TERROR_MOVIES="$HOME/jellyfin/terror_movies"
-JELLYFIN_FAMILY_MOVIES="$HOME/jellyfin/family_movies"
+JELLYFIN_CONFIG="$BASE_PATH/jellyfin/config"
+JELLYFIN_TVSHOWS="$BASE_PATH/jellyfin/data/tvshows"
+JELLYFIN_MOVIES="$BASE_PATH/jellyfin/data/movies"
+JELLYFIN_TERROR_SERIES="$BASE_PATH/jellyfin/data/terror_series"
+JELLYFIN_TERROR_MOVIES="$BASE_PATH/jellyfin/terror_movies"
+JELLYFIN_FAMILY_MOVIES="$BASE_PATH/jellyfin/family_movies"
 
 # Radarr -> config, movies, downloads
-RADARR_CONFIG="$HOME/radarr/config"
-RADARR_MOVIES="$HOME/radarr/data/movies"
-RADARR_DOWNLOADS="$HOME/radarr/data/downloads"
+RADARR_CONFIG="$BASE_PATH/radarr/config"
+RADARR_MOVIES="$BASE_PATH/radarr/data/movies"
+RADARR_DOWNLOADS="$BASE_PATH/radarr/data/downloads"
 
 # Transmission -> config, downloads
-TRANSMISSION_CONFIG="$HOME/transmission/config"
-TRANSMISSION_DOWNLOADS="$HOME/transmission/data/downloads"
+TRANSMISSION_CONFIG="$BASE_PATH/transmission/config"
+TRANSMISSION_DOWNLOADS="$BASE_PATH/transmission/data/downloads"
 
 # Jackett -> config, downloads
-JACKETT_CONFIG="$HOME/jackett/config"
-JACKETT_DOWNLOADS="$HOME/jackett/data/downloads"
+JACKETT_CONFIG="$BASE_PATH/jackett/config"
+JACKETT_DOWNLOADS="$BASE_PATH/jackett/data/downloads"
 
 # Sonarr -> config, tvshows, downloads
-SONARR_CONFIG="$HOME/sonarr/config"
-SONARR_TVSHOWS="$HOME/sonarr/data/tvshows"
-SONARR_DOWNLOADS="$HOME/sonarr/data/downloads"
+SONARR_CONFIG="$BASE_PATH/sonarr/config"
+SONARR_TVSHOWS="$BASE_PATH/sonarr/data/tvshows"
+SONARR_DOWNLOADS="$BASE_PATH/sonarr/data/downloads"
 
 
 # Now all previous variables will be exported to the system and defined at bashrc file
