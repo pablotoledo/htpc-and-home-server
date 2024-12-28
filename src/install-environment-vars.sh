@@ -3,7 +3,8 @@
 #This script will define the environment variables in a Ubuntu 22.04 LTS server
 
 # Define base path
-BASE_PATH="$HOME"
+BASE_PATH="/media/minion/data"
+BASE_PATH_SECOND_DISK="/media/minion/data2"
 
 #Define the variables
 # Jellyfin -> config, tvshows, movies, terror_series, terror_movies, family_movies
@@ -11,8 +12,9 @@ JELLYFIN_CONFIG="$BASE_PATH/jellyfin/config"
 JELLYFIN_TVSHOWS="$BASE_PATH/jellyfin/data/tvshows"
 JELLYFIN_MOVIES="$BASE_PATH/jellyfin/data/movies"
 JELLYFIN_TERROR_SERIES="$BASE_PATH/jellyfin/data/terror_series"
-JELLYFIN_TERROR_MOVIES="$BASE_PATH/jellyfin/terror_movies"
-JELLYFIN_FAMILY_MOVIES="$BASE_PATH/jellyfin/family_movies"
+JELLYFIN_TERROR_MOVIES="$BASE_PATH/jellyfin/data/terror_movies"
+JELLYFIN_FAMILY_MOVIES="$BASE_PATH/jellyfin/data/family_movies"
+JELLYFIN_SECOND_HDD="$BASE_PATH_SECOND_DISK"
 
 # Radarr -> config, movies, downloads
 RADARR_CONFIG="$BASE_PATH/radarr/config"

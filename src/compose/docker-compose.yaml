@@ -16,6 +16,7 @@ services:
       - ${JELLYFIN_TERROR_SERIES}:/data/terror_series
       - ${JELLYFIN_TERROR_MOVIES}:/data/terror_movies
       - ${JELLYFIN_FAMILY_MOVIES}:/data/family_movies
+      - ${JELLYFIN_SECOND_HDD}:/data/data2
     ports:
       - 8096:8096
       - 8920:8920 #optional
