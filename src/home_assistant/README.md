@@ -1,9 +1,9 @@
 ## Deploy Home Assistant
 In order to enable Home Assistant we have to use the following command:
 
-```bash
-docker-compose up -d
-```
+    ```bash
+    docker-compose up -d
+    ```
 
 # Update Home Assistant
 
