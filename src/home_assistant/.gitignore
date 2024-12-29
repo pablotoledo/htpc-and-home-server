@@ -1,0 +1,11 @@
+config/.storage
+config/.cloud
+config/.google.token
+config/secrets.yaml
+config/*.db
+config/*.log
+config/*.backup
+*
+*/
+*/*
+!.gitignore
