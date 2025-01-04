@@ -5,6 +5,30 @@ In order to enable Home Assistant we have to use the following command:
     docker-compose up -d
     ```
 
+    Once Home Assistant is running, execute the following command to install HACS:
+
+    ```bash
+    docker exec -it homeassistant bash -c "cd /config && wget -O - https://get.hacs.xyz | bash -"
+    ```
+
+    Now that you have installed HACS and restarted Home Assistant, you need to configure it. Follow these steps:
+
+    1. Open your browser and go to the Home Assistant interface (http://localhost:8123).
+    2. Go to Settings (the gear icon in the sidebar) -> Devices & Services.
+    3. Click the "+ ADD INTEGRATION" button in the bottom right corner.
+    4. Search for "HACS" in the search box.
+    5. Select HACS when it appears.
+
+    The configuration process will start:
+
+    - You will need to authorize HACS with your GitHub account.
+    - You will be redirected to GitHub for authentication.
+    - Accept the requested permissions.
+    - Return to Home Assistant.
+
+    Once the authorization is complete, HACS will be available in the sidebar.
+    The first time you access HACS, you will accept the terms of use and it will download the basic information.
+
 # Update Home Assistant
 
 1. **Backup**: Before performing any updates, it's always advisable to back up your data, especially the persistent volumes and the configurations you're using in Docker (like your `docker-compose.yml` file and environment variables).
