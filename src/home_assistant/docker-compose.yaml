@@ -2,7 +2,9 @@ version: '3'
 services:
   homeassistant:
     container_name: homeassistant
-    image: ghcr.io/home-assistant/home-assistant:stable
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - ./config:/config
       - /etc/localtime:/etc/localtime:ro
@@ -11,3 +13,8 @@ services:
     restart: unless-stopped
     environment:
       - TZ=Europe/Madrid
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8123"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
