@@ -1,0 +1,15 @@
+version: '3'
+services:
+  gitea:
+    image: gitea/gitea:latest
+    container_name: gitea
+    restart: always
+    volumes:
+      - ./gitea:/data
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - GITEA__database__DB_TYPE=sqlite3
+    ports:
+      - "3000:3000"   # Web Interface
+      - "2222:22"     # SSH
